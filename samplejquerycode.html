@@ -1,0 +1,79 @@
+$(document).ready(function() {
+$("#register").click(function() {
+var name = $("#name").val();
+var email = $("#email").val();
+var password = $("#password").val();
+var cpassword = $("#cpassword").val();
+if (name == '' || email == '' || password == '' || cpassword == '') {
+alert("Please fill all fields...!!!!!!");
+} else if ((password.length) < 8) {
+alert("Password should atleast 8 character in length...!!!!!!");
+} else if (!(password).match(cpassword)) {
+alert("Your passwords don't match. Try again?");
+} else {
+$.post("register.php", {
+name1: name,
+email1: email,
+password1: password
+}, function(data) {
+if (data == 'You have Successfully Registered.....') {
+$("form")[0].reset();
+}
+alert(data);
+});
+}
+});
+
+
+
+
+
+
+if (pn.value == ""){                                
+        document.getElementById('error4').innerHTML="phone number should not be empty";
+      }else{
+        document.getElementById('error4').innerHTML="";
+      } 
+
+
+      $("#pn").focusout(function(){
+         if ($(pn).val()==''){
+           $("#error4").text(" Phone number can't be blanked");
+            return false;
+           }else{
+            $("#error4").text("");
+          }
+        });
+
+
+
+        
+
+      $("#gen").focusout(function(){
+      if (gen[0].checked == true){
+      $("#error5").text("");
+      }
+      else if (gen[1].checked == true){
+      $("#error5").text("");
+      }
+      else{
+        $("#error5").text("please type same password as above");
+        return false;
+      }
+
+
+
+
+
+
+
+  if (repass.value == ""){
+        $("#error5").text("repeat password should not be empty");
+      }else if (repass.value != pass.value){
+        $("#error5").text("please type same password as above");
+      }else{
+        $("#error5").text("");
+      }
+
+
+      

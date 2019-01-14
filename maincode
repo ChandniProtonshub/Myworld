@@ -1,0 +1,133 @@
+function validateForm()                                    
+{ 
+    var fn = document.registration.firstname;
+    var ln = document.registration.lastname;
+    var em = document.registration.email
+    var pn = document.registration.phonenumber;
+    var password=document.registration.password.value; 
+    // var rp =document.registration.psw-repeat;
+   
+    if (fn.value == "")                                  
+    { 
+        window.alert("Please enter your first name."); 
+        fn.focus(); 
+        return false; 
+    } 
+
+     if (ln.value == "")                                  
+    { 
+        window.alert("Please enter your last name."); 
+        ln.focus(); 
+        return false; 
+    }
+   
+      if (em.value == "")                                   
+    { 
+        window.alert("Please enter a valid e-mail address."); 
+        em.focus(); 
+        return false; 
+    } 
+   
+    if (em.value.indexOf("@", 0) < 0)                 
+    { 
+        window.alert("Please enter a valid e-mail address"); 
+        em.focus(); 
+        return false; 
+    } 
+   
+     if (pn.value == "")                            
+    { 
+        window.alert("Please enter your phone number."); 
+        pn.focus(); 
+        return false; 
+    } 
+   
+     if (password ==null || password== "")
+     {
+      window.alert("password can't be blank");  
+      return false;  
+     }
+
+     else if(password.size <=5)
+     {  
+     window.alert("Password must be at least 5 characters long");  
+     return false;  
+     }  
+
+    if ((rp.value == "") && (rp != pass))                  
+    { 
+      window.alert("Please enter your password again or same password as above"); 
+      rp.focus(); 
+        return false; 
+    } 
+
+    
+   
+   // return true; 
+}
+</script> 
+
+
+
+function validateForm()      
+{
+console.log("hello");                            
+
+if(document.registration.firstname.value=="")
+ {
+document.getElementById('une').innerHTML = "First name should not be empty";
+  registration.firstname.focus();
+  return(false);
+ }
+
+ if(document.registration.lastname.value=="")
+ {
+document.getElementById('une').innerHTML = "Last name should not be empty";
+registration.lastname.focus();
+  return(false);
+ }
+
+
+if(document.registration.email.value=="")
+  {
+  document.getElementById('une').innerHTML = "Email id should not be empty";
+  registration.email.focus();
+  return(false);
+ }
+
+if(document.registration.phonenumber.value=="")
+  {
+  document.getElementById('une').innerHTML = "Phone Number is requered";
+  registration.phonenumber.focus();
+  return(false);
+  }
+
+if(document.registration.gender.value=="")
+   {
+  document.getElementById('une').innerHTML = "Please select a gender";
+  registration.gender.focus();
+  return(false);
+   }
+
+   if(document.registration.password.value=="")
+   {
+  document.getElementById('une').innerHTML = "Please type a password";
+  registration.password.focus();
+  return(false);
+   }
+
+
+if((document.registration.psw-repeat.value) != (document.registration.password.value))
+   {
+  document.getElementById('une').innerHTML = "Password Must be equal";
+  registration.password.value = "";
+  registration.psw-repeat.value = "";
+  registration.password.focus();
+  return(false);
+  }
+  else
+   {
+   return(true);
+   }
+}
+</SCRIPT>

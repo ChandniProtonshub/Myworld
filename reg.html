@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width= device-width, initial-scale=1">
+<body>
+</head>
+<script language="javascript" type="text/javascript"> 
+function validateForm()                                    
+{
+var fstname = document.getElementById("<%=firstname.ClientID%>"); 
+
+if (fstname.value == "") 
+{
+
+document.getElementById("firstname").innerHTML = "Requried Field cannot be left blank"; 
+
+document.getElementById("firstname").focus();
+
+return false;
+}
+}
+</script> 
+<form name='registration' onsubmit="return validateForm()" method="post">
+    <div class="container">
+    <label for="firstname"><b>First Name*:</b></label>
+    <input type="text" placeholder="Enter First Name" name="firstname">
+    <font color='red'> <DIV id="firstname"> </DIV> </font>
+    <button type="submit" class="registerbtn">Register</button>
+    </div>
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<HTML>
+    <div class= "p" > 
+    <form id= "editform" class= "userform" method= "post"> 
+
+    <label for="firstname"><b>First Name*:</b></label>
+    <input type="text" size="50" placeholder="Enter First Name" name="firstname">
+
+ <data-msg= "Please provide First Name" placeholder= "First Name" value= "">
+
+      <div class='msg-error' id='msg-error' style='color:red;margin-bottom: 20px;display:none;'>Please enter first name</div>
+      
+    <div class="row md-gray-bg margin-md-0">
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <input id="cbot-save-ticket" tabindex="100" type="submit"
+               class="button pull-right ignore"
+               value="Save Ticket"/>
+    </div>
+</HTML>
+
+
+<script type="text/javascript">
+    document.getElementById("editform").addEventListener('submit',
+    function  (event) {
+    var focusSet = false;
+    var fname = document.getElementById("edit-first-name");
+    if(!(fname.value.length))
+     {
+        document.getElementById('msg-error').style.display = 'block';
+        event.preventDefault();
+        fname.focus();
+
+     }
+     });

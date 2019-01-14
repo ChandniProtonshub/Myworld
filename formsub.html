@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+	function sendform(){
+//verification script.
+	if ((document.forms[0].variable1.value=="") || (document.forms[0].variable2.value=="") || (document.forms[0].variable3.value==""))
+	{
+	//Update the sending status.
+	document.forms[0].statusindicator.value='Please fill in all forms.';
+	alert("Please fill in all forms. Thanks.");
+	return false;
+	} else {
+	//Update the sending status.
+	document.forms[0].statusindicator.value='Sending...Please Wait.';
+	}
+}
+
+	</script>
+	<form method="post" action="send.php">
+<input type=image src="submitbutton.jpg" 
+alt="Click Here To Submit" onClick="javascript:sendform();"></form>
+
+</body>
+</html>

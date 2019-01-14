@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title></title>
+        <script>
+
+            function validateForm() 
+            {
+                var gen = document.getElementsByName("gender");
+                if (gen[0].checked == true) 
+                {
+                    // alert("Your gender is male");
+                } 
+
+                else if (gen[1].checked == true) 
+                {
+                    // alert("Your gender is female");
+                } 
+
+                else 
+                {
+                    var msg = '<span style="color:red;">You must select your gender!</span><br /><br />';
+                    document.getElementById('msg').innerHTML = msg;
+                    return false;
+                }
+                
+                return true;
+            }
+
+        </script>
+    </head>
+    <body>
+        <form action="" method="POST">
+            <label>Gender:</label>
+            <br />
+            <input type="radio" name="gender" value="male"/>Male
+            <br />
+            <input type="radio" name="gender" value="female"/>Female
+            <br />
+            <span id="msg" style="color: red;"></span><br />
+            <input type="submit" onclick="return validateForm();"/>
+        </form>
+    </body>
+</html>
